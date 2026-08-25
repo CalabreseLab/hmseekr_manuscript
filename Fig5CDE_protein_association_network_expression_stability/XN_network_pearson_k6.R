@@ -35,10 +35,10 @@ dt$RBP1<-gsub('_norm','',dt$RBP1)
 dt$RBP2<-gsub('_norm','',dt$RBP2)
 
 ######## subset X and N RBP list for its own pearson
-xlist<-read.csv('top5sigRBP_Xmodule_k6.csv',header=T)
+xlist<-read.csv('top5RBP_Xmodule_k6.csv',header=T)
+# 24
+nlist<-read.csv('top5RBP_Nmodule_k6.csv',header=T)
 # 19
-nlist<-read.csv('top5sigRBP_Nmodule_k6.csv',header=T)
-# 18
 
 xdt<-dt[which(dt$RBP1 %in% xlist$x & dt$RBP2 %in% xlist$x),]
 ndt<-dt[which(dt$RBP1 %in% nlist$x & dt$RBP2 %in% nlist$x),]
@@ -96,7 +96,7 @@ for (n in 1:length(genelist)) {
 # still NA exists, as there are genes with all NAs as the edge weights before
 # list all NA genes
 xn$transcript[is.na(xn$xist_r)]
-# 518
+# 481
 xn$transcript[is.na(xn$neat1_r)]
 # 563
 
